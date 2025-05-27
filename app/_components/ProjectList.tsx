@@ -4,7 +4,7 @@ import { PROJECTS } from '@/lib/data';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import Project from './Project';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -12,7 +12,6 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 const ProjectList = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const projectListRef = useRef<HTMLDivElement>(null);
-    const [selectedProject, setSelectedProject] = useState<string | null>(null);
 
     useGSAP(
         () => {
@@ -34,10 +33,6 @@ const ProjectList = () => {
         { scope: containerRef },
     );
 
-    const handleMouseEnter = (slug: string) => {
-        setSelectedProject(slug);
-    };
-
     return (
         <section className="pb-section" id="selected-projects">
             <div className="container">
@@ -49,8 +44,7 @@ const ProjectList = () => {
                             <Project
                                 index={index}
                                 project={project}
-                                selectedProject={selectedProject}
-                                onMouseEnter={handleMouseEnter}
+                                onMouseEnter={() => {}}
                                 key={project.slug}
                             />
                         ))}
