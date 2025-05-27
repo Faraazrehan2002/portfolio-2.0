@@ -71,10 +71,10 @@ const AboutMe = () => {
                     <div className="md:col-span-7">
                         <div className="text-lg text-muted-foreground max-w-[450px]">
                             <p className="slide-up-and-fade">
-                                As a software developer with a focus on full-stack development and AI integration, I combine my academic expertise from my recently completed Master's degree with hands-on experience from internships and projects to create innovative solutions.
+                                As a software developer with a focus on full-stack development and AI integration, I combine my academic expertise from my recently completed Master&apos;s degree with hands-on experience from internships and projects to create innovative solutions.
                             </p>
                             <p className="mt-3 slide-up-and-fade">
-                                My approach focuses on building scalable applications that not only meet technical requirements but also deliver exceptional user experiences. I'm particularly passionate about AI-powered platforms and data-driven solutions that can make a real impact.
+                                My approach focuses on building scalable applications that not only meet technical requirements but also deliver exceptional user experiences. I&apos;m particularly passionate about AI-powered platforms and data-driven solutions that can make a real impact.
                             </p>
                         </div>
                     </div>

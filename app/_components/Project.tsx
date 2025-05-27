@@ -1,16 +1,17 @@
-import TransitionLink from '@/components/TransitionLink';
-import { cn } from '@/lib/utils';
-import { IProject } from '@/types';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { useRef } from 'react';
+import { ScrollTrigger } from 'gsap/all';
+import React from 'react';
+import TransitionLink from '@/components/TransitionLink';
+import { IProject } from '@/types';
 
-interface Props {
+gsap.registerPlugin(ScrollTrigger, useGSAP);
+
+type Props = {
     index: number;
     project: IProject;
-    selectedProject: string | null;
-    onMouseEnter: (_slug: string) => void;
-}
+    onMouseEnter: () => void;
+};
 
 /*
 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link">
@@ -27,10 +28,8 @@ interface Props {
 
 */
 
-gsap.registerPlugin(useGSAP);
-
-const Project = ({ index, project, selectedProject, onMouseEnter }: Props) => {
-    const externalLinkRef = useRef<SVGSVGElement>(null);
+const Project = ({ index, project, onMouseEnter }: Props) => {
+    const externalLinkRef = React.useRef<SVGSVGElement>(null);
 
     const { context, contextSafe } = useGSAP(() => {}, {
         scope: externalLinkRef,
@@ -38,7 +37,7 @@ const Project = ({ index, project, selectedProject, onMouseEnter }: Props) => {
     });
 
     const handleMouseEnter = contextSafe?.(() => {
-        onMouseEnter(project.slug);
+        onMouseEnter();
     });
 
     const handleMouseLeave = contextSafe?.(() => {

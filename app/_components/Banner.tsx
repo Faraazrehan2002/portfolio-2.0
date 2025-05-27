@@ -50,7 +50,7 @@ const Banner = () => {
                         <span className="font-medium text-foreground">
                             Faraaz Rehan
                         </span>
-                        . I am a passionate software developer who recently graduated with a Master's in Computer Science from the University of Houston, with experience in building scalable AI-powered platforms and full-stack applications.
+                        . I am a passionate software developer who recently graduated with a Master&apos;s in Computer Science from the University of Houston, with experience in building scalable AI-powered platforms and full-stack applications.
                     </p>
                     <Button
                         as="link"
